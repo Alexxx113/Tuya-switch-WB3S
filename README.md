@@ -13,7 +13,7 @@ Configure tuya switch OpenBK7231T
 <p>Go to pages firmware instruction</p>
 
 
-<a name="идентификатор">OpenBK7231T_App]https://github.com/openshwprojects/OpenBK7231T_App</a>
+<a href="[идентификатор](https://github.com/openshwprojects/OpenBK7231T_App)">OpenBK7231T_App</a>
 
 <p></p>
 <p>connect uart 3.3v !!!!</p>
@@ -68,7 +68,7 @@ sensor:
     name: "mqtt temp sens"
     qos: 1
     device_class: power
-    availability_topic: "koridor/connected"
+    availability_topic: ""name"/connected"
   </code>
   </pre>
 </div
