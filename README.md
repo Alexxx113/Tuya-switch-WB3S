@@ -62,20 +62,20 @@ light:
 <b>home assistant config:</b>
 <div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="">
   <pre class="notranslate">
-  <code>
-  
-sensor:  
+  <code>  
+sensor:
   - platform: mqtt
     state_topic: ""name"/2/get"
     name: "mqtt temp sens"
     qos: 1
     device_class: power
     availability_topic: "koridor/connected"
-    #device_class: temperature
-    #state_class: measurement
-    #last_reset_value_template: "00"
-  
-  
+  </code>
+  </pre>
+</div
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="">
+  <pre class="notranslate">
+  <code>
 template:
   sensor:
     - name: Temperatura NTC
@@ -92,8 +92,6 @@ template:
         {% set T = ( 1 / ( c1 + c2 * logR2 + c3 * logR2**3 ) - 273.15 )  / 5 -11.3 %}
         {{ T |round(1) }}
       unit_of_measurement: '°C'
-
-
 "name" = name switch
   </code>
   </pre>
