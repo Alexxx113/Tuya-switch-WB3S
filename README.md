@@ -13,7 +13,7 @@ Configure tuya switch OpenBK7231T
 <p>Go to pages firmware instruction</p>
 
 
-<a href="[идентификатор](https://github.com/openshwprojects/OpenBK7231T_App)">OpenBK7231T_App</a>
+<a href="https://github.com/openshwprojects/OpenBK7231T_App">OpenBK7231T_App</a>
 
 <p></p>
 <p>connect uart 3.3v !!!!</p>
