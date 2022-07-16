@@ -28,9 +28,9 @@ Configure tuya switch OpenBK7231T
 
 <p>configure MQTT</p>
 
-
-
 <b>home assistant config:</b>
+<p>"name" = name switch</p>
+
 <div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="">
   <pre class="notranslate">
   <code>
@@ -45,8 +45,6 @@ light:
     payload_off: 0
     retain: true
     availability_topic: ""name"/connected"
-
-"name" = name switch
   </code>
   </pre>
 </div>
@@ -60,6 +58,7 @@ light:
 <p>resistor 20k</p>
 
 <b>home assistant config:</b>
+<p>"name" = name switch</p>
 <div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="">
   <pre class="notranslate">
   <code>  
@@ -73,6 +72,7 @@ sensor:
   </code>
   </pre>
 </div
+  <p>"name" = name switch</p>
 <div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="">
   <pre class="notranslate">
   <code>
@@ -92,7 +92,6 @@ template:
         {% set T = ( 1 / ( c1 + c2 * logR2 + c3 * logR2**3 ) - 273.15 )  / 5 -11.3 %}
         {{ T |round(1) }}
       unit_of_measurement: '°C'
-"name" = name switch
   </code>
   </pre>
 </div>
