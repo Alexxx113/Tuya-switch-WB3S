@@ -26,6 +26,14 @@ Configure tuya switch OpenBK7231T
 <p>P9 rel 1</p>
 <p>P10 btn 1</p>
 
+<p>configure MQTT</p>
+
+
+
+<b>home assistant config:</b>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="">
+  <pre class="notranslate">
+  <code>
 light:
   - platform: mqtt
     unique_id: "name"
@@ -39,9 +47,54 @@ light:
     availability_topic: ""name"/connected"
 
 "name" = name switch
+  </code>
+  </pre>
+</div>
+
+
+
 
 <b>if you want add temp sensor:</b>
 <p>P23 adc 2</p>
 <p>NTC thermistor a B value of 3950 100k</p>
 <p>resistor 20k</p>
 
+<b>home assistant config:</b>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto" data-snippet-clipboard-copy-content="">
+  <pre class="notranslate">
+  <code>
+  
+sensor:  
+  - platform: mqtt
+    state_topic: ""name"/2/get"
+    name: "mqtt temp sens"
+    qos: 1
+    device_class: power
+    availability_topic: "koridor/connected"
+    #device_class: temperature
+    #state_class: measurement
+    #last_reset_value_template: "00"
+  
+  
+template:
+  sensor:
+    - name: Temperatura NTC
+      unique_id: temperature
+      device_class: temperature
+      state: >
+        {% set Vo = states('sensor.mqtt_temp_sens')|float %}
+        {% set c1 = 1.009249522e-03 %}
+        {% set c2 = 2.378405444e-04 %}
+        {% set c3 = 2.019202697e-07 %}
+        {% set R1 = 100000 %}
+        {% set R2 = R1 * 1023 / ( Vo - 1 ) %}
+        {% set logR2 = log(R2,10) %}
+        {% set T = ( 1 / ( c1 + c2 * logR2 + c3 * logR2**3 ) - 273.15 )  / 5 -11.3 %}
+        {{ T |round(1) }}
+      unit_of_measurement: '°C'
+
+
+"name" = name switch
+  </code>
+  </pre>
+</div>
