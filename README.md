@@ -1,4 +1,4 @@
-# Tuya switch WB3S WB2S WB2L
+# Tuya switch WB3S
 
 <p>
 Configure tuya switch OpenBK7231T
