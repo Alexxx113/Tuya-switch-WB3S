@@ -20,6 +20,10 @@ Configure tuya switch OpenBK7231T
 <img src="https://github.com/Alexxx113/Tuya-switch-WB3S-WB2S-WB2L/blob/main/firmware uart contacts.jpg" alt="альтернативный текст" />
 
 <p></p>
+<p>conect new WIFI "openbk..."</p>
+<p>go "192.168.4.1"</p>
+<p>configure WIFI</p>
+<p></p>
 <b>configure module:</b>
 <p></p>
 <p>P1 wifi_led_n 0</p>
